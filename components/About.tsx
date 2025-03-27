@@ -99,14 +99,16 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 overflow-hidden p-6 col-span-full sm:col-span-2 lg:col-span-2 row-span-2 "
+            className="bg-gradient-to-br from-background-light/10 via-background-light/5 to-transparent backdrop-blur-md rounded-2xl border border-primary/10 overflow-hidden p-6 col-span-full sm:col-span-2 lg:col-span-2 row-span-2 hover:shadow-[0_0_30px_-5px_rgba(var(--primary-rgb),0.2)] transition-all duration-300"
           >
             <div className="flex flex-col gap-4 justify-center">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl">
-                  <Code />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                  <Code className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold">Tech Enthusiast</h3>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                  Tech Enthusiast
+                </h3>
               </div>
               <p className="text-foreground/80 leading-relaxed">
                 Passionate about building scalable and maintainable systems, I
@@ -128,7 +130,7 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             whileHover={{ y: -5 }}
-            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 col-span-1 row-span-1"
+            className="group bg-gradient-to-br from-background-light/10 via-background-light/5 to-transparent backdrop-blur-md rounded-2xl border border-primary/10 p-6 hover:shadow-[0_0_30px_-5px_rgba(var(--primary-rgb),0.2)] transition-all duration-300"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
@@ -244,7 +246,7 @@ const About = () => {
               <p className="text-foreground/70">on your next project</p>
               <button className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 transition-colors px-4 py-2 rounded-lg text-primary">
                 <Mail className="w-4 h-4" />
-                <span className="text-sm">example@email.com</span>
+                <span className="text-sm">lynn.duan.dev@gmail.com</span>
               </button>
             </div>
           </motion.div>

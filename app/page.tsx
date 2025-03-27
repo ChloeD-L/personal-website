@@ -1,7 +1,9 @@
 import About from "@/components/About";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import WorkExperience from "@/components/WorkExperience";
+import Project from "@/components/Project";
+import Skills from "@/components/Skills";
+import WorkExperience from "@/components/experience/WorkExperience";
 import Image from "next/image";
 
 export default function Home() {
@@ -31,6 +33,19 @@ export default function Home() {
         className="snap-center"
       >
         <WorkExperience />
+      </section>
+      <section
+        id="skills"
+        className="snap-start"
+      >
+        <Skills />
+      </section>
+
+      <section
+        id="projects"
+        className="snap-start"
+      >
+        <Project />
       </section>
     </div>
   );

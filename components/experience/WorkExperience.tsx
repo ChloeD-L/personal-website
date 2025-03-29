@@ -94,7 +94,7 @@ const WorkExperiences = [
     company: "Austin Hospital",
     location: "Melbourne, Australia",
     period: "Mar 2024 - Jun 2024",
-    companyLogo: "/images/austin-hospital-logo.png",
+    companyLogo: "/images/austin-logo.jpg",
     description: `I led development of a hospital-facing web tool for secure script execution and version tracking. 
       I gathered requirements from clients, implemented JWT-based authentication with Redux, 
       and delivered features like script history and notification systems under tight timelines.`,
@@ -130,8 +130,9 @@ const WorkExperiences = [
     location: "Sydney, Australia",
     period: "Feb 2024 - Jun 2024",
     companyLogo: "/images/everyoung-logo.png",
-    description:
-      "Worked on AI-powered automation for reminders and task scheduling.",
+    description: `At EverYoung AI, I worked on integrating OpenAI’s function calling with Airtable to enhance scheduling and task reminders in a backend system. I developed automation features using TypeScript and RESTful APIs, reducing manual work and improving completion rates. Additionally, I collaborated with product and design teams to improve user interaction within a React Native app, while actively participating in Agile sprints to align with team goals and ensure on-time delivery.
+
+`,
     technologies: [
       { name: "TypeScript", icon: "/images/tech/typescript.png" },
       { name: "OpenAI API", icon: "/images/tech/openai.png" },

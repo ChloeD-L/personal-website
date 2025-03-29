@@ -37,11 +37,6 @@ const skillCategories = {
       icon: "/images/tech/github-actions-logo.png",
       proficiency: 80,
     },
-    {
-      name: "Kubernetes",
-      icon: "/images/tech/kubernetes-logo.png",
-      proficiency: 70,
-    },
   ],
 };
 

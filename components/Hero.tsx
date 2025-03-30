@@ -25,7 +25,6 @@ const SkillCard: React.FC<{
   total: number;
 }> = ({ skill, index, total }) => {
   const [isHovered, setIsHovered] = useState(false);
-
   const angle = (index / total) * Math.PI * 2;
   const radius = 150;
   const x = Math.cos(angle) * radius;
@@ -111,28 +110,28 @@ const Hero: React.FC = () => {
   const skills: Skill[] = [
     {
       name: "React",
-      logo: "/images/react-logo2.png",
+      logo: "/images/tech/react-logo2.png",
       color: "#61DAFB",
       category: "frontend",
       level: 90,
     },
     {
       name: "TypeScript",
-      logo: "/images/ts-logo.png",
+      logo: "/images/tech/ts-logo.png",
       color: "#3178C6",
       category: "frontend",
       level: 85,
     },
     {
       name: "Node.js",
-      logo: "/images/nodejs-logo.png",
+      logo: "/images/tech/nodejs-logo.png",
       color: "#339933",
       category: "backend",
       level: 80,
     },
     {
       name: "AWS",
-      logo: "/images/aws-logo.png",
+      logo: "/images/tech/aws-logo.png",
       color: "#FF9900",
       category: "tools",
       level: 75,
@@ -188,7 +187,7 @@ const Hero: React.FC = () => {
               >
                 <div className="w-32 h-32 rounded-full overflow-hidden relative">
                   <Image
-                    src="/images/photo.png" // 确保更新为您的照片路径
+                    src="/images/photo.png"
                     alt="Lynn"
                     fill
                     className="object-cover"

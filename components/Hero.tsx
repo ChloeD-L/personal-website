@@ -51,16 +51,12 @@ const SkillCard: React.FC<{
       }}
     >
       <div
-        className={`
-          p-4 rounded-lg backdrop-blur-sm
-          ${
-            isHovered
-              ? "bg-primary-light text-background-light"
-              : "bg-background-light text-primary"
-          }
-          shadow-lg transition-all duration-300
-          flex flex-col items-center justify-center
-          min-w-[90px]
+        className={`p-4 rounded-lg backdrop-blur-sm ${
+          isHovered
+            ? "bg-primary-light text-background-light"
+            : "bg-background-light text-primary"
+        }
+          shadow-lg transition-all duration-300 flex flex-col items-center justify-center min-w-[90px]
         `}
       >
         <div className="w-10 h-10 relative mb-2">
@@ -111,9 +107,6 @@ const Hero: React.FC = () => {
     loop: true,
     delaySpeed: 2000,
   });
-
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const skills: Skill[] = [
     {

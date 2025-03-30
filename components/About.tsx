@@ -164,7 +164,7 @@ const About = () => {
             </div>
             <div>
               <p className="text-foreground/70 text-lg font-medium">
-                I'm very flexible with
+                I&apos;m very flexible with
               </p>
               <p className="text-primary font-bold">time zone communications</p>
             </div>
@@ -240,7 +240,9 @@ const About = () => {
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                 <MessageSquare />
               </div>
-              <h3 className="text-lg font-semibold">Let's work together</h3>
+              <h3 className="text-lg font-semibold">
+                Let&apos;s work together
+              </h3>
             </div>
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-2">
               <p className="text-foreground/70">on your next project</p>

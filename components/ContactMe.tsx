@@ -148,7 +148,7 @@ const ContactUs = () => {
         >
           <p className="text-foreground/70">
             I&apos;m currently open to full-time software engineering positions
-            and interesting project collaborations. Let's create something
+            and interesting project collaborations. Let&apos;s create something
             amazing together!
           </p>
         </motion.div>

@@ -29,21 +29,47 @@ const Project: React.FunctionComponent<ProjectProps> = () => {
       },
       images: ["/images/projects/ama.png"],
     },
+    // {
+    //   title: "Android Task Management App",
+    //   description: "A Java-based Android application for task management",
+    //   tech: ["Java", "Android SDK", "SQLite"],
+    //   github: "https://github.com/username/android-task-app",
+    //   details: {
+    //     features: [
+    //       "Local data storage with SQLite",
+    //       "Task creation and management",
+    //       "Push notifications",
+    //     ],
+    //     implementation: "Details about implementation...",
+    //     outcome: "Project impact and results...",
+    //   },
+    //   images: ["/images/projects/ama.png"],
+    // },
     {
-      title: "Android Task Management App",
-      description: "A Java-based Android application for task management",
-      tech: ["Java", "Android SDK", "SQLite"],
-      github: "https://github.com/username/android-task-app",
+      title: "Echoes – Geotagged Memory Sharing App",
+      description:
+        "An Android app that allows users to capture, tag, and share multimedia travel memories on an interactive map.",
+      tech: [
+        "Java",
+        "Android SDK",
+        "Firebase",
+        "Google Maps API",
+        "Android Studio",
+      ],
+      link: "https://www.youtube.com/watch?v=lnzYH5CHiO8", // 替换为你的实际仓库链接
       details: {
         features: [
-          "Local data storage with SQLite",
-          "Task creation and management",
-          "Push notifications",
+          "Interactive map with geotagged memories",
+          "Support for multimedia content: photo, video, and audio",
+          "Social interaction features: user profiles, memory sharing",
+          "Firebase integration for authentication and real-time storage",
         ],
-        implementation: "Details about implementation...",
-        outcome: "Project impact and results...",
+        implementation:
+          "Built using Java in Android Studio. Integrated Google Maps API for geolocation features and Firebase for user data, media storage, authentication, and analytics. Designed a user-friendly interface to enable users to explore and share their travel experiences with others.",
+        outcome:
+          "The app redefines how users document and share travel memories, encouraging exploration, connection, and reflection. Successfully tested by various user personas including travelers, creators, and locals.",
       },
-      images: ["/images/projects/ama.png"],
+      images: ["/images/projects/echo-app.png"], // 替换为你的图片路径
     },
   ];
 

@@ -5,8 +5,9 @@ import { useState, useRef, useEffect } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Link from "next/link";
 import Image from "next/image";
+import { skills } from "@/content/skills/hero-section-skill";
 
-interface Skill {
+export interface Skill {
   name: string;
   logo: string;
   color: string;
@@ -107,37 +108,6 @@ const Hero: React.FC = () => {
     delaySpeed: 2000,
   });
 
-  const skills: Skill[] = [
-    {
-      name: "React",
-      logo: "/images/tech/react-logo2.png",
-      color: "#61DAFB",
-      category: "frontend",
-      level: 90,
-    },
-    {
-      name: "TypeScript",
-      logo: "/images/tech/ts-logo.png",
-      color: "#3178C6",
-      category: "frontend",
-      level: 85,
-    },
-    {
-      name: "Node.js",
-      logo: "/images/tech/nodejs-logo.png",
-      color: "#339933",
-      category: "backend",
-      level: 80,
-    },
-    {
-      name: "AWS",
-      logo: "/images/tech/aws-logo.png",
-      color: "#FF9900",
-      category: "tools",
-      level: 75,
-    },
-  ];
-
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({
@@ -178,7 +148,7 @@ const Hero: React.FC = () => {
             className="space-y-8"
           >
             {/* 照片和名字 */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 px-4">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -202,7 +172,7 @@ const Hero: React.FC = () => {
                 />
               </motion.div>
 
-              <h1 className="text-5xl font-bold text-primary">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-primary break-words text-center">
                 <span>{text}</span>
                 <Cursor cursorColor="#bc6c25" />
               </h1>

@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 w-full z-10">
+      <div className="max-w-7xl mx-auto px-4 w-full z-10 pt-24">
         {/* 主要内容区域 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* 左侧：介绍 */}

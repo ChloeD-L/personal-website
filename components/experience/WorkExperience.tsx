@@ -192,7 +192,7 @@ const WorkExperience: React.FunctionComponent<ExperienceProps> = () => {
               </div>
             </div>
 
-            <div className="pl-24">
+            <div className="pl-4 sm:pl-10 md:pl-24">
               {/* Company Info */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl overflow-hidden bg-background/50 backdrop-blur-sm flex items-center justify-center p-2 border border-primary/10 shadow-lg">
@@ -216,15 +216,12 @@ const WorkExperience: React.FunctionComponent<ExperienceProps> = () => {
               </div>
 
               {/* Description */}
-              <p className="text-foreground/70 mb-4 px-16">
+              <p className="text-foreground/70 mb-4 lg:px-16 md:px-10 pl-16 pr-8">
                 {experience.description}
               </p>
 
               {/* Experience Card */}
-              <ExperienceCard
-                highlights={experience.highlights}
-                // className="px-16"
-              />
+              <ExperienceCard highlights={experience.highlights} />
             </div>
           </motion.div>
         ))}

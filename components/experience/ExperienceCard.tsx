@@ -25,10 +25,10 @@ const ExperienceCard: React.FunctionComponent<ExperienceCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="px-16">
+    <div className="lg:px-16 md:px-10 pl-16 pr-8">
       <motion.button
         whileHover={{ x: 5 }}
-        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all group"
+        className="flex items-center gap-2 md:px-4 px-2 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all group"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <span className="text-sm font-medium">
@@ -54,7 +54,7 @@ const ExperienceCard: React.FunctionComponent<ExperienceCardProps> = ({
             {highlights.map((highlight, index) => (
               <div
                 key={index}
-                className=" p-6 hover:shadow-lg transition-all flex justify-between bg-background"
+                className=" md:p-6 p-4 hover:shadow-lg transition-all flex justify-between bg-background"
               >
                 <div className="flex gap-6 items-center w-full">
                   {/* Left: Image */}
@@ -73,12 +73,12 @@ const ExperienceCard: React.FunctionComponent<ExperienceCardProps> = ({
                   </div> */}
 
                   {/* Right: Content */}
-                  <div className="flex flex-col flex-1 h-full justify-center py-2 pl-4 ">
+                  <div className="flex flex-col flex-1 h-full justify-center md:py-2 pt-2 pl-4 ">
                     <div>
-                      <h4 className="text-xl font-bold mb-2 text-primary pb-2">
+                      <h4 className="md:text-xl text-base font-bold mb-2 text-primary pb-2">
                         {highlight.title}
                       </h4>
-                      <p className="text-foreground/70 leading-relaxed mb-3">
+                      <p className="text-foreground/70 leading-relaxed md:mb-3 mb-1">
                         <span className="text-primary">
                           {/* <Dot className="w-4 h-4 inline-block" /> */}
                           <span className="font-bold">Description:</span>{" "}

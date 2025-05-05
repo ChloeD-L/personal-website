@@ -25,10 +25,10 @@ const ExperienceCard: React.FunctionComponent<ExperienceCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="px-16">
+    <div className="lg:px-16 md:px-10 md:pl-16 pl-12 pr-8">
       <motion.button
         whileHover={{ x: 5 }}
-        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all group"
+        className="flex items-center gap-2 md:px-4 px-2 py-2 pl-4 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all group"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <span className="text-sm font-medium">
@@ -49,14 +49,14 @@ const ExperienceCard: React.FunctionComponent<ExperienceCardProps> = ({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden mt-4 rounded-xl"
+            className="overflow-hidden mt-4 py-4 rounded-xl bg-background "
           >
             {highlights.map((highlight, index) => (
               <div
                 key={index}
-                className=" p-6 hover:shadow-lg transition-all flex justify-between bg-background"
+                className=" md:px-6 px-4 hover:shadow-lg transition-all flex justify-between "
               >
-                <div className="flex gap-6 items-center w-full">
+                <div className="flex md:gap-2 items-center w-full">
                   {/* Left: Image */}
                   {/* <div
                     className="relative w-auto h-[200px] aspect-video rounded-lg overflow-hidden"
@@ -73,12 +73,12 @@ const ExperienceCard: React.FunctionComponent<ExperienceCardProps> = ({
                   </div> */}
 
                   {/* Right: Content */}
-                  <div className="flex flex-col flex-1 h-full justify-center py-2 pl-4 ">
+                  <div className="flex flex-col flex-1 h-full justify-center py-2 md:py-2 pt-2 pl-4 ">
                     <div>
-                      <h4 className="text-xl font-bold mb-2 text-primary pb-2">
+                      <h4 className="md:text-xl text-xl font-bold mb-2 text-primary">
                         {highlight.title}
                       </h4>
-                      <p className="text-foreground/70 leading-relaxed mb-3">
+                      <p className="text-foreground/70 leading-relaxed text-base md:mb-3 mb-1">
                         <span className="text-primary">
                           {/* <Dot className="w-4 h-4 inline-block" /> */}
                           <span className="font-bold">Description:</span>{" "}

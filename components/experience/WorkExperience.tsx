@@ -183,7 +183,7 @@ const WorkExperience: React.FunctionComponent<ExperienceProps> = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.2 }}
-            className="relative mb-16 last:mb-0"
+            className="relative mb-8 last:mb-0"
           >
             {/* Timeline Dot */}
             <div className="absolute left-0 translate-x-[22px] translate-y-[32px]">
@@ -192,9 +192,9 @@ const WorkExperience: React.FunctionComponent<ExperienceProps> = () => {
               </div>
             </div>
 
-            <div className="pl-24">
+            <div className="pl-4 sm:pl-10 md:pl-16">
               {/* Company Info */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-2 lg:mb-6 ml-12">
                 <div className="w-12 h-12 rounded-xl overflow-hidden bg-background/50 backdrop-blur-sm flex items-center justify-center p-2 border border-primary/10 shadow-lg">
                   <img
                     src={experience.companyLogo}
@@ -203,10 +203,10 @@ const WorkExperience: React.FunctionComponent<ExperienceProps> = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-1">
+                  <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-1">
                     {experience.title}
                   </h3>
-                  <p className="text-foreground/70 flex items-center gap-2 font-medium">
+                  <p className="text-foreground/70 flex items-center gap-2 font-medium text-sm md:text-base">
                     {experience.company} | {experience.location}
                   </p>
                   <p className="text-sm text-foreground/60 mt-1">
@@ -216,15 +216,12 @@ const WorkExperience: React.FunctionComponent<ExperienceProps> = () => {
               </div>
 
               {/* Description */}
-              <p className="text-foreground/70 mb-4 px-16">
+              <p className="text-foreground/70 mb-4 lg:px-16 md:px-10 md:pl-16 pl-12 pr-6">
                 {experience.description}
               </p>
 
               {/* Experience Card */}
-              <ExperienceCard
-                highlights={experience.highlights}
-                // className="px-16"
-              />
+              <ExperienceCard highlights={experience.highlights} />
             </div>
           </motion.div>
         ))}

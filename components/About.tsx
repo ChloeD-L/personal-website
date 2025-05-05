@@ -12,6 +12,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import Image from "next/image";
+import GlobeGlobe from "./aboutComponents/GlobeGlobe";
 
 interface FloatingIcon {
   id: number;
@@ -53,53 +54,18 @@ const About = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen px-4 py-20 pt-32 overflow-hidden">
-      {/* Background floating icons */}
-      {/* <div className="absolute inset-0 opacity-20 inset-72">
-        {icons.map((icon) => (
-          <motion.div
-            key={icon.id}
-            className="absolute"
-            style={{
-              left: `${icon.x}%`,
-              top: `${icon.y}%`,
-              width: `${icon.size}px`,
-              height: `${icon.size}px`,
-              zIndex: 0,
-            }}
-            animate={{
-              x: [15, -15, 15],
-              y: [15, -15, 15],
-              rotate: [icon.rotation, -icon.rotation, icon.rotation],
-            }}
-            transition={{
-              duration: icon.speed,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <img
-              src={icon.icon}
-              alt="Tech icon"
-              className="w-full h-full object-contain opacity-20 hover:opacity-50 transition-opacity duration-300"
-            />
-          </motion.div>
-        ))}
-      </div> */}
-
+    <div className="relative min-h-screen px-4 py-16 pt-28 overflow-hidden">
       <div className="container mx-auto z-10 relative">
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent text-center mb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent text-center mb-8 sm:mb-16">
           ABOUT ME
         </h2>
-
-        {/* 更新grid布局系统 */}
-        <div className="h-[calc(100vh-128px-96px)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 grid-rows-4 overflow-hidden">
-          {/* Tech Enthusiast Card - 占据更大空间 */}
+        <div className="flex flex-col sm:h-[calc(100vh-128px-96px)] sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:grid-rows-4 overflow-hidden">
+          {/* 1. Tech Enthusiast */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-background-light/10 via-background-light/5 to-transparent backdrop-blur-md rounded-2xl border border-primary/10 overflow-hidden p-6 col-span-full sm:col-span-2 lg:col-span-2 row-span-2 hover:shadow-[0_0_30px_-5px_rgba(var(--primary-rgb),0.2)] transition-all duration-300"
+            className="rounded-2xl border border-primary/10 overflow-hidden p-6 sm:col-span-2 lg:col-span-2 sm:row-span-2 hover:shadow-[0_0_30px_-5px_rgba(var(--primary-rgb),0.2)] transition-all duration-300"
           >
             <div className="flex flex-col gap-4 justify-center">
               <div className="flex items-center gap-3 mb-4">
@@ -124,117 +90,12 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Location Card */}
+          {/* 2. Contact Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            whileHover={{ y: -5 }}
-            className="group bg-gradient-to-br from-background-light/10 via-background-light/5 to-transparent backdrop-blur-md rounded-2xl border border-primary/10 p-6 hover:shadow-[0_0_30px_-5px_rgba(var(--primary-rgb),0.2)] transition-all duration-300"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                <MapPin />
-              </div>
-              <h3 className="text-lg font-semibold">Location</h3>
-            </div>
-            <div>
-              <p className="text-foreground/70 text-lg font-medium">
-                Melbourne, Australia
-              </p>
-              <p className="text-foreground/50 text-sm mt-2">
-                Available for remote work
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Time Zone Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            whileHover={{ y: -5 }}
-            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 col-span-1 row-span-1"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                <Clock />
-              </div>
-              <h3 className="text-lg font-semibold">Time Zone</h3>
-            </div>
-            <div>
-              <p className="text-foreground/70 text-lg font-medium">
-                I&apos;m very flexible with
-              </p>
-              <p className="text-primary font-bold">time zone communications</p>
-            </div>
-          </motion.div>
-
-          {/* Collaboration Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 col-span-1 sm:col-span-2 row-span-1"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                <Users />
-              </div>
-              <h3 className="text-lg font-semibold">Collaboration</h3>
-            </div>
-            <div>
-              <p className="text-foreground/90 text-lg font-medium mb-4">
-                I prioritize client collaboration, fostering open communication
-              </p>
-              <div className="flex -space-x-4 mt-2">
-                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
-                  {/* Replace with actual images */}
-                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500"></div>
-                </div>
-                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-green-400 to-blue-500"></div>
-                </div>
-                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-yellow-400 to-red-500"></div>
-                </div>
-                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-pink-400 to-purple-500"></div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Tech Stack Icon Grid */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 row-span-2 col-span-1"
-          >
-            <div className="grid grid-cols-3 gap-4 place-items-center h-full">
-              {techIcons.slice(0, 9).map((icon, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.2 }}
-                  className="w-10 h-10"
-                >
-                  <img
-                    src={icon}
-                    alt="Tech icon"
-                    className="w-full h-full object-contain opacity-70 hover:opacity-100 transition-opacity"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Contact Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 col-span-3"
+            className="rounded-2xl border p-6 col-span-1 sm:col-span-2"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
@@ -253,7 +114,121 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* World Map Card */}
+          <div className="flex gap-4 sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:col-span-2 lg:col-span-2 sm:row-span-1">
+            {/* 4. Location Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -5 }}
+              className="rounded-2xl border border-primary/10 p-6 transition-all duration-300 col-span-1 sm:col-span-1"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  <MapPin />
+                </div>
+                <h3 className="text-lg font-semibold">Location</h3>
+              </div>
+              <div>
+                <p className="text-foreground/70 text-lg font-medium">
+                  Melbourne, Australia
+                </p>
+                <p className="text-foreground/50 text-sm mt-2">
+                  Available for remote work
+                </p>
+              </div>
+              {/* <div className="block sm:hidden">
+                <GlobeGlobe size={100} />
+              </div>
+              <div className="hidden sm:block">
+                <GlobeGlobe size={200} />
+              </div> */}
+            </motion.div>
+
+            {/* 5. Time Zone Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ y: -5 }}
+              className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 col-span-1 row-span-1"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  <Clock />
+                </div>
+                <h3 className="text-lg font-semibold">Time Zone</h3>
+              </div>
+              <div>
+                <p className="text-foreground/70 text-lg font-medium">
+                  I&apos;m very flexible with
+                </p>
+                <p className="text-primary font-bold">
+                  time zone communications
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* 3. Tech Stack Icon Grid */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 col-span-1 row-span-2"
+          >
+            <div className="grid grid-cols-3 gap-4 place-items-center h-full">
+              {techIcons.slice(0, 9).map((icon, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.2 }}
+                  className="w-10 h-10"
+                >
+                  <img
+                    src={icon}
+                    alt="Tech icon"
+                    className="w-full h-full object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* 6. Collaboration Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="bg-background-light/10 backdrop-blur-md rounded-2xl border border-primary/10 p-6 col-span-1 sm:col-span-3 row-span-1"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                <Users />
+              </div>
+              <h3 className="text-lg font-semibold">Collaboration</h3>
+            </div>
+            <div>
+              <p className="text-foreground/90 text-lg font-medium mb-4">
+                I prioritize client collaboration, fostering open communication
+              </p>
+              <div className="flex -space-x-4 mt-2">
+                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500"></div>
+                </div>
+                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-green-400 to-blue-500"></div>
+                </div>
+                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-yellow-400 to-red-500"></div>
+                </div>
+                <div className="w-12 h-12 rounded-full bg-gray-300 border-2 border-background overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-pink-400 to-purple-500"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 7. World Map Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
